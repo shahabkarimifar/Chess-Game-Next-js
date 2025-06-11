@@ -1,0 +1,295 @@
+$square-size: 90px;
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  .board {
+    width: calc((8 * $square-size) + 6rem);
+    height: calc((8 * $square-size) + 6rem);
+    background: url("/pattern.jpg");
+    padding: 3rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(8, $square-size);
+    grid-template-rows: repeat(8, $square-size);
+    .square {
+      padding: 5px;
+      font-weight: bold;
+      display: flex;
+      align-items: flex-end;
+      &.dark {
+        background: #779556;
+        color: rgba(235, 236, 208, 0.5);
+      }
+      &.light {
+        background: #ebecd0;
+        color: rgba(119, 149, 86, 0.5);
+      }
+    }
+  }
+  .shadow {
+    width: calc((8 * $square-size) + 6rem);
+    height: calc((8 * $square-size) + 6rem);
+    padding: 3rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(8, $square-size);
+    grid-template-rows: repeat(8, $square-size);
+    position: absolute;
+    .piece {
+      width: 90px;
+      height: 90px;
+      background-size: cover !important;
+      position: absolute;
+      top: 47px;
+      left: 47px;
+    }
+
+    .piece.br {
+      background: url("./../public/pieces/br.png");
+    }
+    .piece.bn {
+      background: url("./../public/pieces/bn.png");
+    }
+    .piece.bb {
+      background: url("./../public/pieces/bb.png");
+    }
+    .piece.bq {
+      background: url("./../public/pieces/bq.png");
+    }
+    .piece.bk {
+      background: url("./../public/pieces/bk.png");
+    }
+    .piece.bn {
+      background: url("./../public/pieces/bn.png");
+    }
+    .piece.bp {
+      background: url("./../public/pieces/bp.png");
+    }
+
+    .piece.wr {
+      background: url("./../public/pieces/wr.png");
+    }
+    .piece.wn {
+      background: url("./../public/pieces/wn.png");
+    }
+    .piece.wb {
+      background: url("./../public/pieces/wb.png");
+    }
+    .piece.wq {
+      background: url("./../public/pieces/wq.png");
+    }
+    .piece.wk {
+      background: url("./../public/pieces/wk.png");
+    }
+    .piece.wn {
+      background: url("./../public/pieces/wn.png");
+    }
+    .piece.wp {
+      background: url("./../public/pieces/wp.png");
+    }
+
+    .position-07 {
+      transform: translate(0%, 0%);
+    }
+    .position-17 {
+      transform: translate(100%, 0%);
+    }
+    .position-27 {
+      transform: translate(200%, 0%);
+    }
+    .position-37 {
+      transform: translate(300%, 0%);
+    }
+    .position-47 {
+      transform: translate(400%, 0%);
+    }
+    .position-57 {
+      transform: translate(500%, 0%);
+    }
+    .position-67 {
+      transform: translate(600%, 0%);
+    }
+    .position-77 {
+      transform: translate(700%, 0%);
+    }
+
+    .position-06 {
+      transform: translate(0%, 100%);
+    }
+    .position-16 {
+      transform: translate(100%, 100%);
+    }
+    .position-26 {
+      transform: translate(200%, 100%);
+    }
+    .position-36 {
+      transform: translate(300%, 100%);
+    }
+    .position-46 {
+      transform: translate(400%, 100%);
+    }
+    .position-56 {
+      transform: translate(500%, 100%);
+    }
+    .position-66 {
+      transform: translate(600%, 100%);
+    }
+    .position-76 {
+      transform: translate(700%, 100%);
+    }
+
+    .position-05 {
+      transform: translate(0%, 200%);
+    }
+    .position-15 {
+      transform: translate(100%, 200%);
+    }
+    .position-25 {
+      transform: translate(200%, 200%);
+    }
+    .position-35 {
+      transform: translate(300%, 200%);
+    }
+    .position-45 {
+      transform: translate(400%, 200%);
+    }
+    .position-55 {
+      transform: translate(500%, 200%);
+    }
+    .position-65 {
+      transform: translate(600%, 200%);
+    }
+    .position-75 {
+      transform: translate(700%, 200%);
+    }
+
+    .position-04 {
+      transform: translate(0%, 300%);
+    }
+    .position-14 {
+      transform: translate(100%, 300%);
+    }
+    .position-24 {
+      transform: translate(200%, 300%);
+    }
+    .position-34 {
+      transform: translate(300%, 300%);
+    }
+    .position-44 {
+      transform: translate(400%, 300%);
+    }
+    .position-54 {
+      transform: translate(500%, 300%);
+    }
+    .position-64 {
+      transform: translate(600%, 300%);
+    }
+    .position-74 {
+      transform: translate(700%, 300%);
+    }
+
+    .position-03 {
+      transform: translate(0%, 400%);
+    }
+    .position-13 {
+      transform: translate(100%, 400%);
+    }
+    .position-23 {
+      transform: translate(200%, 400%);
+    }
+    .position-33 {
+      transform: translate(300%, 400%);
+    }
+    .position-43 {
+      transform: translate(400%, 400%);
+    }
+    .position-53 {
+      transform: translate(500%, 400%);
+    }
+    .position-63 {
+      transform: translate(600%, 400%);
+    }
+    .position-73 {
+      transform: translate(700%, 400%);
+    }
+
+    .position-02 {
+      transform: translate(0%, 500%);
+    }
+    .position-12 {
+      transform: translate(100%, 500%);
+    }
+    .position-22 {
+      transform: translate(200%, 500%);
+    }
+    .position-32 {
+      transform: translate(300%, 500%);
+    }
+    .position-42 {
+      transform: translate(400%, 500%);
+    }
+    .position-52 {
+      transform: translate(500%, 500%);
+    }
+    .position-62 {
+      transform: translate(600%, 500%);
+    }
+    .position-72 {
+      transform: translate(700%, 500%);
+    }
+
+    .position-01 {
+      transform: translate(0%, 600%);
+    }
+    .position-11 {
+      transform: translate(100%, 600%);
+    }
+    .position-21 {
+      transform: translate(200%, 600%);
+    }
+    .position-31 {
+      transform: translate(300%, 600%);
+    }
+    .position-41 {
+      transform: translate(400%, 600%);
+    }
+    .position-51 {
+      transform: translate(500%, 600%);
+    }
+    .position-61 {
+      transform: translate(600%, 600%);
+    }
+    .position-71 {
+      transform: translate(700%, 600%);
+    }
+
+    .position-00 {
+      transform: translate(0%, 700%);
+    }
+    .position-10 {
+      transform: translate(100%, 700%);
+    }
+    .position-20 {
+      transform: translate(200%, 700%);
+    }
+    .position-30 {
+      transform: translate(300%, 700%);
+    }
+    .position-40 {
+      transform: translate(400%, 700%);
+    }
+    .position-50 {
+      transform: translate(500%, 700%);
+    }
+    .position-60 {
+      transform: translate(600%, 700%);
+    }
+    .position-70 {
+      transform: translate(700%, 700%);
+    }
+  }
+}
