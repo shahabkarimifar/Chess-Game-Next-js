@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import Peace from "./Peice";
+import Peace from "./Piece";
 import { createBoardState } from "@/helper";
 import { useMainContext } from "@/contexts/MainContext";
 
