@@ -1,3 +1,17 @@
+export const reducer = (state, action) => {
+  switch (action.type) {
+    case "UPDATE_POSITION":
+      let turn = state.turn === "white" ? "black" : "white";
+      return {
+        ...state,
+        turn,
+        position: [...state.position, action.payload],
+      };
+
+    default:
+      return state;
+  }
+};
 export const createBoardState = () => {
   const position = new Array(8).fill("").map((item) => new Array(8).fill("🟧"));
 

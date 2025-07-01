@@ -2,9 +2,12 @@
 import { useRef, useState } from "react";
 import Peace from "./Peace";
 import { createBoardState } from "@/helper";
+import { useMainContext } from "@/contexts/MainContext";
 
 export default function ShadowBoard() {
-  const [position, setPosition] = useState(createBoardState());
+  const { appState, dispatch } = useMainContext();
+  const position = appState.position[appState.position.length - 1];
+
   const ref = useRef();
   const onDrop = (e) => {
     const [peaceClass, oldCol, oldRow] = e.dataTransfer
@@ -23,7 +26,7 @@ export default function ShadowBoard() {
     const newBoard = position.map((el) => [...el]);
     newBoard[oldRow][oldCol] = "🟧";
     newBoard[newRow][newCol] = peaceClass;
-    setPosition(newBoard);
+    dispatch({ type: "UPDATE_POSITION", payload: newBoard });
   };
 
   const onDragOver = (e) => e.preventDefault();
