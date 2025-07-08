@@ -1,7 +1,7 @@
 export const reducer = (state, action) => {
   switch (action.type) {
     case "UPDATE_POSITION":
-      let turn = state.turn === "white" ? "black" : "white";
+      let turn = state.turn === "w" ? "b" : "w";
       return {
         ...state,
         turn,

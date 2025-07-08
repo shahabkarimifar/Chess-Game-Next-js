@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
-import Peace from "./Piece";
+import Piece from "./Piece";
 import { createBoardState } from "@/helper";
 import { useMainContext } from "@/contexts/MainContext";
 
@@ -34,8 +34,8 @@ export default function ShadowBoard() {
     <div className="shadow" onDrop={onDrop} onDragOver={onDragOver} ref={ref}>
       {position.map((rows, row) =>
         rows.map((cols, col) => (
-          <Peace
-            position={position[row][col]}
+          <Piece
+            positionClass={position[row][col]}
             col={col}
             row={row}
             key={`${row}-${col}`}

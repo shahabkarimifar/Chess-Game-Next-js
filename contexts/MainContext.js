@@ -9,7 +9,7 @@ export const useMainContext = () => useContext(MainContext);
 
 export default function MainContextProvider({ children }) {
   const initialAppState = {
-    turn: "white",
+    turn: "w",
     position: [createBoardState()],
   };
   const [appState, dispatch] = useReducer(reducer, initialAppState);
