@@ -8,7 +8,7 @@ export default function Peace({ positionClass, col, row }) {
 
   const currentPosition = position[position.length - 1];
 
-  const candidateRokhMove = () => {
+  const candidateRookMove = () => {
     const allowMoves = [];
     const player = positionClass[0];
     const opponent = player === "w" ? "b" : "w";
@@ -47,8 +47,10 @@ export default function Peace({ positionClass, col, row }) {
     // setTimeout(() => (e.target.style.display = "none"), 0);
 
     if (turn === positionClass[0]) {
-      const candidate = candidateRokhMove();
-      console.log(candidate);
+      if (positionClass === "wr" || positionClass === "br") {
+        const candidate = candidateRookMove();
+        dispatch({ type: "UPDATE_CANDIDATE", payload: candidate });
+      }
     }
   };
 

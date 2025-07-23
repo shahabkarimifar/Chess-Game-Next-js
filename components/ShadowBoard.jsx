@@ -20,11 +20,17 @@ export default function ShadowBoard() {
     const newCol = Math.floor((e.clientX - (left + 48)) / squareSize);
     const newRow = 7 - Math.floor((e.clientY - (top + 48)) / squareSize);
 
-    updatePosition(peaceClass, oldCol, oldRow, newCol, newRow);
+    if (
+      appState.candidate?.find((dir) => dir[0] === newRow && dir[1] === newCol)
+    ) {
+      updatePosition(peaceClass, oldCol, oldRow, newCol, newRow);
+    }
+
+    dispatch({ type: "UPDATE_CANDIDATE", payload: [] });
   };
   const updatePosition = (peaceClass, oldCol, oldRow, newCol, newRow) => {
     const newBoard = position.map((el) => [...el]);
-    newBoard[oldRow][oldCol] = "🟧";
+    newBoard[oldRow][oldCol] = "";
     newBoard[newRow][newCol] = peaceClass;
     dispatch({ type: "UPDATE_POSITION", payload: newBoard });
   };

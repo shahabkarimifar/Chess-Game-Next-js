@@ -11,6 +11,7 @@ export default function MainContextProvider({ children }) {
   const initialAppState = {
     turn: "w",
     position: [createBoardState()],
+    candidate : []
   };
   const [appState, dispatch] = useReducer(reducer, initialAppState);
   return (

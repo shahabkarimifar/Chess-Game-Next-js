@@ -20,6 +20,7 @@ $square-size: 90px;
       font-weight: bold;
       display: flex;
       align-items: flex-end;
+      position: relative;
       &.dark {
         background: #779556;
         color: rgba(235, 236, 208, 0.5);
@@ -27,6 +28,32 @@ $square-size: 90px;
       &.light {
         background: #ebecd0;
         color: rgba(119, 149, 86, 0.5);
+      }
+      &.selected {
+        &::after {
+          content: "";
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: rgba(0, 0, 0, 0.1);
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      &.opponent {
+        &::after {
+          content: "";
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          border: 8px solid rgba(0, 0, 0, 0.1);
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
       }
     }
   }

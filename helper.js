@@ -7,13 +7,17 @@ export const reducer = (state, action) => {
         turn,
         position: [...state.position, action.payload],
       };
-
+    case "UPDATE_CANDIDATE":
+      return {
+        ...state,
+        candidate: action.payload,
+      };
     default:
       return state;
   }
 };
 export const createBoardState = () => {
-  const position = new Array(8).fill("").map((item) => new Array(8).fill("🟧"));
+  const position = new Array(8).fill("").map((item) => new Array(8).fill(""));
 
   for (let i = 0; i <= 7; i++) {
     position[6][i] = "bp";
