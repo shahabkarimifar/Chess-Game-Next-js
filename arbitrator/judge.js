@@ -1,4 +1,8 @@
-const { candidateRookMove, candidateBishopMove } = require("./moves");
+const {
+  candidateRookMove,
+  candidateBishopMove,
+  candidateQueenMove,
+} = require("./moves");
 
 export const arbiter = {
   regularMove: (positionClass, currentPosition, col, row) => {
@@ -7,5 +11,8 @@ export const arbiter = {
 
     if (positionClass === "wb" || positionClass === "bb")
       return candidateBishopMove(positionClass, currentPosition, col, row);
+
+    if (positionClass === "wq" || positionClass === "bq")
+      return candidateQueenMove(positionClass, currentPosition, col, row);
   },
 };

@@ -68,3 +68,15 @@ export const candidateBishopMove = (
 
   return allowMoves;
 };
+
+export const candidateQueenMove = (
+  positionClass,
+  currentPosition,
+  col,
+  row
+) => {
+  return [
+    ...candidateRookMove(positionClass, currentPosition, col, row),
+    ...candidateBishopMove(positionClass, currentPosition, col, row),
+  ];
+};
