@@ -19,10 +19,10 @@ export const reducer = (state, action) => {
 export const createBoardState = () => {
   const position = new Array(8).fill("").map((item) => new Array(8).fill(""));
 
-  // for (let i = 0; i <= 7; i++) {
-  //   position[6][i] = "bp";
-  //   position[1][i] = "wp";
-  // }
+  for (let i = 0; i <= 7; i++) {
+    position[6][i] = "bp";
+    position[1][i] = "wp";
+  }
 
   position[7][7] = "br";
   position[7][6] = "bn";

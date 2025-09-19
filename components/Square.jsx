@@ -8,16 +8,13 @@ export default function Square({ j, i, col, row }) {
 
   const currentPosition = position[position.length - 1];
   const squareClass = (i, j) => {
-    let c = "light";
-    (i + j) % 2 !== 0 ? (c = "dark") : c;
+    let c = "dark";
+    (i + j) % 2 !== 0 ? (c = "light") : c;
     if (candidate.find((dir) => dir[0] === j && dir[1] === i)) {
       if (currentPosition[j][i]) c += " opponent";
       else c += " selected";
     }
 
-    // [newRow, newCol]
-    // columns.map((col, i)
-    // rows.map((row, j)
     return c;
   };
   return (

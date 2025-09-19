@@ -80,3 +80,36 @@ export const candidateQueenMove = (
     ...candidateBishopMove(positionClass, currentPosition, col, row),
   ];
 };
+
+export const candidateKnightMove = (
+  positionClass,
+  currentPosition,
+  col,
+  row
+) => {
+  const allowMoves = [];
+  const player = positionClass[0];
+  const opponent = player === "w" ? "b" : "w";
+  const direction = [
+    [-2, -1],
+    [-2, 1],
+    [2, -1],
+    [2, 1],
+    [-1, -2],
+    [1, -2],
+    [-1, 2],
+    [1, 2],
+  ];
+  direction.forEach(([dx, dy]) => {
+    const newRow = row + dx;
+    const newCol = col + dy;
+
+    const cell = currentPosition?.[newRow]?.[newCol];
+
+    if ((cell !== undefined && cell.startsWith(opponent)) || cell === "") {
+      allowMoves.push([newRow, newCol]);
+    }
+  });
+
+  return allowMoves;
+};
