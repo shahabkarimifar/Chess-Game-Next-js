@@ -2,6 +2,10 @@
 
 Welcome to my ✨ **Chess Game Project** ✨ — a modern web-based chess game built using **React**, **Next.js**, and **Tailwind CSS**. This project is part of a complete tutorial series available on my YouTube channel! 🎥📚
 
+## 📸 Preview
+
+![Screenshot](public/Screenshot.png)
+
 ---
 
 ## 🔍 What is this?
@@ -22,11 +26,11 @@ This is a **fully functional, interactive chess game** made for the web. You can
 
 ## 🧰 Tech Stack
 
-| Technology   | Description                  |
-|--------------|------------------------------|
-| React        | UI library                   |
-| Next.js      | React framework (SSR support)|
-| Vercel       | Deployment platform          |
+| Technology | Description                   |
+| ---------- | ----------------------------- |
+| React      | UI library                    |
+| Next.js    | React framework (SSR support) |
+| Vercel     | Deployment platform           |
 
 ---
 
@@ -53,3 +57,4 @@ npm install
 
 # 4. Start the dev server
 npm run dev
+```
