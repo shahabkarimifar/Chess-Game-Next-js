@@ -113,3 +113,29 @@ export const candidateKnightMove = (
 
   return allowMoves;
 };
+
+export const candidateKingMove = (positionClass, currentPosition, col, row) => {
+  const allowMoves = [];
+  const player = positionClass[0];
+  const direction = [
+    [-1, -1],
+    [-1, 0],
+    [-1, 1],
+    [0, 1],
+    [0, -1],
+    [1, 1],
+    [1, 0],
+    [1, -1],
+  ];
+
+  direction.forEach(([dx, dy]) => {
+    const newRow = row + dx;
+    const newCol = col + dy;
+
+    const cell = currentPosition?.[newRow]?.[newCol];
+
+    if (cell !== undefined && !cell.startsWith(player))
+      allowMoves.push([newRow, newCol]);
+  });
+  return allowMoves;
+};

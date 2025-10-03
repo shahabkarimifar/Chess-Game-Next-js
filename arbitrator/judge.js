@@ -3,6 +3,7 @@ const {
   candidateBishopMove,
   candidateQueenMove,
   candidateKnightMove,
+  candidateKingMove,
 } = require("./moves");
 
 export const arbiter = {
@@ -18,5 +19,8 @@ export const arbiter = {
 
     if (positionClass === "wq" || positionClass === "bq")
       return candidateQueenMove(positionClass, currentPosition, col, row);
+
+    if (positionClass === "wk" || positionClass === "bk")
+      return candidateKingMove(positionClass, currentPosition, col, row);
   },
 };
